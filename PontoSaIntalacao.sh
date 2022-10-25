@@ -35,12 +35,10 @@ echo "TESTE PARA VER SE FUNCIONA................................................
 else
 	echo "AGORA VAI FUNCIONAR.............................................................................................................................................................................."
 	echo "Iniciando o container"
-	echo "Entrando no sudo su"
-	sudo su
 	echo "Fazendo docker run"
-	sudo docker run -d -p 3306:3306 --name PontoSa -e "MYSQLDATABASE=PontoSa" -e "MYSQL_ROOT_PASSWORD=urubu100" mysql:5.7
+	sudo docker start PontoSa
 	echo "Docker exec"
-	docker exec -it PontoSa bash
+	sudo docker exec -it PontoSa bash
 	echo "Mysql"
 	mysql -u root -p
 	urubu100
