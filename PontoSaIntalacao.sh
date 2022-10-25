@@ -40,7 +40,7 @@ else
 	echo "Docker exec"
 	sudo docker exec -it PontoSa bash
 	echo "Mysql"
-	mysql -u root -p
+	sudo mysql -u root -p
 	urubu100
 fi
 create database PontoSa;
