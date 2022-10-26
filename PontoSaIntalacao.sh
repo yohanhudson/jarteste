@@ -27,10 +27,9 @@ then
 	sudo docker start PontoSa
 	echo "SUDO SU"
 	echo "Docker exec"
-	sudo su
-	docker exec -it PontoSa bash
+	sudo docker exec -it PontoSa bash
 	echo "Mysql"
-	mysql -u root -p
+	sudo mysql -u root -p
 	urubu100
 else
 	echo "TESTE PARA VER SE FUNCIONA.............................................................................................................................................................................."
