@@ -26,10 +26,11 @@ then
 	echo "Fazendo docker run"
 	sudo docker start PontoSa
 	echo "SUDO SU"
+	sudo su
 	echo "Docker exec"
-	sudo docker exec -it PontoSa bash
+	docker exec -it PontoSa bash
 	echo "Mysql"
-	sudo mysql -u root -p
+	mysql -u root -p
 	urubu100
 else
 	echo "TESTE PARA VER SE FUNCIONA.............................................................................................................................................................................."
