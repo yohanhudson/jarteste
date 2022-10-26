@@ -19,7 +19,7 @@ else
 	sudo apt-get install openjdk-18-jdk
 fi
 docker --version
-if [ $? -eq 0 ];
+if [ $? > 0 ];
 then
 	echo "TESTE PARA VER SE FUNCIONA.............................................................................................................................................................................."
 	sudo apt install docker.io -y
