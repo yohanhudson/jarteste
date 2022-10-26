@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo apt update && sudo apt upgrade -y
 java --version
-if [ $? > 0 ];
+if [ $? -eq 0 ];
 then
 	echo "Java instalado, verificando a versão"
 	if [ $version != 18 ];
@@ -19,7 +19,7 @@ else
 	sudo apt-get install openjdk-18-jdk
 fi
 docker --version
-if [ $? > 0 ];
+if [ $? -eq 0 ];
 then
 	echo "AGORA VAI FUNCIONAR.............................................................................................................................................................................."
 	echo "Iniciando o container"
