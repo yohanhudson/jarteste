@@ -32,15 +32,14 @@ then
 	mysql -u root -p
 	urubu100
 else
-	echo "AGORA VAI FUNCIONAR.............................................................................................................................................................................."
-	echo "Iniciando o container"
-	echo "Fazendo docker run"
-	sudo docker start PontoSa
-	echo "SUDO SU"
+	echo "TESTE PARA VER SE FUNCIONA.............................................................................................................................................................................."
+	sudo apt install docker.io -y
+	sudo systemctl start docker
+	sudo systemctl enable docker
+	sudo docker pull mysql:5.7
 	sudo su
-	echo "Docker exec"
+	sudo docker run -d -p 3306:3306 --name PontoSa -e "MYSQLDATABASE=PontoSa" -e "MYSQL_ROOT_PASSWORD=urubu100" mysql:5.7
 	docker exec -it PontoSa bash
-	echo "Mysql"
 	mysql -u root -p
 	urubu100
 fi
