@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo apt update && sudo apt upgrade -y
 java --version
-if [ $? > -eq 0 ];
+if [ $? > 0 ];
 then
 	echo "Java instalado, verificando a versão"
 	if [ $version != 18 ];
@@ -19,11 +19,22 @@ else
 	sudo apt-get install openjdk-18-jdk
 fi
 docker --version
-if [ $? > -ep 0 ];
+if [ $? > 0 ];
 then
-echo "TESTE PARA VER SE FUNCIONA.............................................................................................................................................................................."
-	sudo apt update && sudo apt upgrade -y
-	sudo apt install docker.io
+	echo "AGORA VAI FUNCIONAR.............................................................................................................................................................................."
+	echo "Iniciando o container"
+	echo "Fazendo docker run"
+	sudo docker start PontoSa
+	echo "SUDO SU"
+	echo "Docker exec"
+	sudo su
+	docker exec -it PontoSa bash
+	echo "Mysql"
+	mysql -u root -p
+	urubu100
+else
+	echo "TESTE PARA VER SE FUNCIONA.............................................................................................................................................................................."
+	sudo apt install docker.io -y
 	sudo systemctl start docker
 	sudo systemctl enable docker
 	sudo docker pull mysql:5.7
@@ -32,17 +43,8 @@ echo "TESTE PARA VER SE FUNCIONA................................................
 	docker exec -it PontoSa bash
 	mysql -u root -p
 	urubu100
-else
-	echo "AGORA VAI FUNCIONAR.............................................................................................................................................................................."
-	echo "Iniciando o container"
-	echo "Fazendo docker run"
-	sudo docker start PontoSa
-	echo "Docker exec"
-	sudo docker exec -it PontoSa bash
-	echo "Mysql"
-	sudo mysql -u root -p
-	urubu100
 fi
+
 create database PontoSa;
 use PontoSa;
 
