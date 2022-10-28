@@ -28,6 +28,7 @@ then
 	docker pull mysql:5.7
 	docker run -d -p 3306:3306 --name PontoSa -e "MYSQLDATABASE=PontoSa" -e "MYSQL_ROOT_PASSWORD=urubu100" mysql:5.7
 	docker exec -it PontoSa bash
+	exit
 	mysql -u root -p
 	urubu100
 else
@@ -38,6 +39,7 @@ else
 	docker pull mysql:5.7
 	docker run -d -p 3306:3306 --name PontoSa -e "MYSQLDATABASE=PontoSa" -e "MYSQL_ROOT_PASSWORD=urubu100" mysql:5.7
 	docker exec -it PontoSa bash
+	exit
 	mysql -u root -p
 	urubu100
 fi
