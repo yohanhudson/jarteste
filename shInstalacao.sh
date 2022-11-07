@@ -21,21 +21,17 @@ fi
 docker --version
 if [ $? > 0 ];
 then
-	echo "TESTE PARA VER SE FUNCIONA IF.............................................................................................................................................................................."
+	echo "TESTE PARA VER SE FUNCIONA IF"
 	sudo apt install docker.io -y
 	sudo systemctl start docker
 	sudo systemctl enable docker
 	sudo docker pull mysql:5.7
 	sudo docker run -d -p 3306:3306 --name PontoSa -e "MYSQLDATABASE=PontoSa" -e "MYSQL_ROOT_PASSWORD=urubu100" mysql:5.7
-	sudo docker exec -it PontoSa bash -c "mysql --password=urubu100 --user=root --host=localhost"
+	sleep 3
+	sudo docker exec -it PontoSa bash
 	
 else
-	echo "TESTE PARA VER SE FUNCIONA ELSE por que n ta aindo.............................................................................................................................................................................."
-	sudo apt install docker.io -y
-	sudo systemctl start docker
-	sudo systemctl enable docker
-	sudo docker pull mysql:5.7
-	sudo docker run -d -p 3306:3306 --name PontoSa -e "MYSQLDATABASE=PontoSa" -e "MYSQL_ROOT_PASSWORD=urubu100" mysql:5.7
-	sudo docker exec -it PontoSa bash -c "mysql --password=urubu100 --user=root --host=localhost"
-	source entrarMysql.sh
+	echo "TESTE PARA VER SE FUNCIONA ELSE"
+	sudo start docker PontoSa
 fi
+	
