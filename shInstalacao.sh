@@ -25,10 +25,11 @@ then
 	sudo apt install docker.io -y
 	sudo systemctl start docker
 	sudo systemctl enable docker
-	sudo docker pull mysql:5.7
-	sudo docker run -d -p 3306:3306 --name PontoSa -e "MYSQLDATABASE=PontoSa" -e "MYSQL_ROOT_PASSWORD=urubu100" mysql:5.7
+	sudo docker build -t mysql .
+	sleep 30
+	sudo docker run --name mysql -p 3306:3006 mysql
+	sudo docker start mysql
 	sleep 3
-	sudo docker exec -it PontoSa bash
 	
 else
 	echo "TESTE PARA VER SE FUNCIONA ELSE"
