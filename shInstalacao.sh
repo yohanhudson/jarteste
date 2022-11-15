@@ -27,12 +27,11 @@ then
 	sudo systemctl enable docker
 	sudo docker build -t mysql .
 	sleep 30
-	sudo docker run --name mysql -p 3306:3006 mysql
-	sudo docker start mysql
-	sleep 3
+	sudo docker run --name mysql -p 3306:3306 mysql
+	sleep 10
 	
 else
 	echo "TESTE PARA VER SE FUNCIONA ELSE"
-	sudo start docker PontoSa
+	sudo docker start mysql
 fi
 	
